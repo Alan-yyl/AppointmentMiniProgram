@@ -1,0 +1,96 @@
+.my{
+  display: flex;
+  /*  */
+  border-bottom: solid 1px #ebebeb;
+}
+.my .my-item{
+  /* 父元素位置要设置为相对 */
+  position: relative; 
+  width: 750rpx;
+  background: #ffffff;
+  padding: 0
+}
+.my .my-item .myitem-icon{
+  flex: 1;
+}
+.my .my-item .myitem-icon image{
+  width: 45rpx;
+  height: 45rpx;
+  padding: 37.5rpx 0;
+}
+.my .my-item .myitem-name{
+  flex: 5;
+  text-align: left;
+  font-size: 20rpx;
+  color: #000000;
+  line-height: 60rpx;
+  padding: 10rpx 0;
+  border-bottom: solid 1px #ebebeb;
+}
+.my .my-item:last-child .myitem-name{
+  border-bottom: none;
+}
+.flex-wrp{
+  display: flex;
+} 
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #F0F4F3;
+}
+.container{
+  padding: 0;
+  font-size: 14rpx;
+  color: #000;
+}
+.flex-item{
+  flex-grow: 1;
+  text-align: center;
+}
+.header {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  background: yellow;
+   display: flex;
+   margin-left:40rpx; 
+}
+.worktype{
+  /* 要约束所在位置的子元素的位置要设置成绝对 */
+  position: absolute;
+  height: 60rpx;
+  width: 200rpx;
+  top:10rpx;
+}
+.workdate{
+  /* 要约束所在位置的子元素的位置要设置成绝对 */
+  position: absolute;
+  height: 60rpx;
+  width: 160rpx;
+  bottom:10rpx;
+  right: 0rpx; 
+}
+.status{
+  /* 要约束所在位置的子元素的位置要设置成绝对 */
+  position: absolute;
+  height: 50rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  color:#07C160;
+  top:10rpx;
+  right: 0rpx; 
+}
+.worktime{
+  /* 要约束所在位置的子元素的位置要设置成绝对 */
+  position: absolute;
+  height: 60rpx;
+  width: 200rpx;
+  bottom:10rpx;
+}
+

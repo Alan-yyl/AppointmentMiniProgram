@@ -1,0 +1,54 @@
+<view class="date">
+  <image class="direction" src="../../../../../images/icon_direction_left.png" bindtap='minusMouth' />
+  <label>{{year}}年{{mouth}}月</label>
+  <image class="direction" src="../../../../../images/icon_direction_right.png" bindtap='plusMouth' />
+</view>
+<view class="header">
+  <block wx:for="{{weeks}}" wx:key="index">
+    <text class="weeks-item-text">{{item}}</text>
+  </block>
+</view>
+<!-- 日历显示 -->
+<view class="body-days">
+  <block wx:for="{{days}}" wx:key="index">
+    <view class="days-item">
+      <!-- 设置每一天的样式 -->
+      <view data-year="{{year}}" data-month="{{mouth}}" data-value="{{item.value}}" bindtap='getdayinfo' class="{{item.class}}">
+        <!-- 显示每一天 -->
+        {{item.value}}
+      </view>
+      <view wx:if="{{item.workDay==0}}" class="workDay">
+        <!-- 显示工作日 -->
+        <image class="appointment" src="../../../../../images/icon_appointment.png" />
+      </view>
+      <view wx:elif="{{item.workDay==-1}}" class="workDay">
+        <!-- 显示已过期的 -->
+        <image class="appointment" src="../../../../../images/finished.png" />
+      </view>
+      <view wx:elif="{{item.workDay==1}}" class="workDay">
+        <!-- 显示未发布的 -->
+        <image class="appointment" src="../../../../../images/start.png" />
+      </view>
+    </view>
+
+  </block>
+</view>
+
+<view class="section">
+  <view class="flex-wrp" style="height: 300px;flex-direction:column;">
+    <block wx:for="{{dayInfos}}" wx:key="index">
+      <view class="flex-item bc_green">
+        <view class='ContentText' style="flex-direction:row;">
+          <view class='worktype'>{{item.type}}</view>
+          <view class='Quota'>剩余名额:{{item.count}}</view>
+          <!-- 今日剩余名额大于0，且今天没有被预约过 -->
+          <view class='ContentTextValue'>
+            <button  data-type='{{item.type}}' data-date='{{item.date}}' bindtap='arrange' data-count='{{item.count}}'class="appointmentButton">安排
+          </button>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

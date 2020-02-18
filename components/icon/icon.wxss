@@ -1,0 +1,14 @@
+.weui-icon {
+   /* 上、右、下、左 */
+  margin-left: -30rpx;
+  margin-bottom: 35rpx;
+  vertical-align: middle;
+  display: inline-block;
+  background: black;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -moz-mask-repeat: no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  -moz-mask-size: cover;
+}

@@ -1,0 +1,17 @@
+<view class="container">  
+  <view class="my" style="margin-top:5rpx">
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/rank.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <view class="worktype">
+          客服：初级
+        </view>
+        <view class="worktime">
+          跟踪：初级
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

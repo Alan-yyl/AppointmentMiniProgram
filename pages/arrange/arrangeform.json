@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "安排工作",
+  "usingComponents": {
+      "mp-icon": "../../components/icon/icon",
+      "mp-loading": "../components/loading/loading"
+    }
+}

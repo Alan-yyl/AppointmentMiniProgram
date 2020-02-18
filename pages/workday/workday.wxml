@@ -1,0 +1,32 @@
+<view class="date">
+  <image class="direction" src="../../../../../images/icon_direction_left.png" bindtap='minusMonth' />
+  <label>{{year}}年{{month}}月</label>
+  <image class="direction" src="../../../../../images/icon_direction_right.png" bindtap='plusMonth' />
+</view>
+<view class="header">
+  <block wx:for="{{weeks}}" wx:key="index">
+    <text class="weeks-item-text">{{item}}</text>
+  </block>
+</view>
+<view class="body-days">
+  <block wx:for="{{days}}" wx:key="index">
+    <view class="days-item">
+      <!-- 设置每一天的样式 -->
+      <view data-year="{{year}}" data-month="{{month}}" data-value="{{item.day}}" bindtap='getdayinfo' class="{{item.showclass}}">
+        <!-- 显示每一天 -->
+        {{item.day}}
+      </view>
+    </view>
+  </block>
+</view>
+<text>\n</text>
+<button bindtap="save" class="saveButton">保存</button>
+<text>\n\n\n</text>
+<view class="RemarkSize bc_green">
+  <view class='RemarkTital RemarkTextColor'>
+    温馨提示
+  </view>
+  <view class="RemarkText">
+    <text>在本页面选择自己可以工作的时间并保存，根据你选择的时间管理员可以适时给你安排工作\n\n</text>
+  </view>
+</view>

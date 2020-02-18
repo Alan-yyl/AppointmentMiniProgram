@@ -1,0 +1,107 @@
+<form bindsubmit="formSubmit">
+<!-- 日历显示 -->
+  <view class="date">
+    <image class="direction" src="../../../../../images/icon_direction_left.png" bindtap='minusMouth' />
+    <label>{{year}}年{{mouth}}月</label>
+    <image class="direction" src="../../../../../images/icon_direction_right.png" bindtap='plusMouth' />
+  </view>
+  <view class="header">
+    <block wx:for="{{weeks}}" wx:key="index">
+      <text class="weeks-item-text">{{item}}</text>
+    </block>
+  </view>
+  <!-- 日历显示 -->
+  <view class="body-days">
+    <block wx:for="{{days}}" wx:key="index">
+      <view class="days-item">
+        <!-- 设置每一天的样式 -->
+        <view data-year="{{year}}" data-month="{{mouth}}" data-value="{{item.value}}" bindtap='getdayinfo' class="{{item.class}}">
+          <!-- 显示每一天 -->
+          {{item.value}}
+        </view>
+        <view wx:if="{{item.workDay==0}}" class="workDay">
+          <!-- 显示工作日 -->
+          <image class="appointment" src="../../../../../images/icon_appointment.png" />
+        </view>
+        <view wx:elif="{{item.workDay==-1}}" class="workDay">
+          <!-- 显示已过期的 -->
+          <image class="appointment" src="../../../../../images/finished.png" />
+        </view>
+        <view wx:elif="{{item.workDay==1}}" class="workDay">
+          <!-- 显示未发布的 -->
+          <image class="appointment" src="../../../../../images/start.png" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="section">
+  <!-- 当前发布 -->
+    <view class="flex-wrp" style="height: 70px;flex-direction:column;">
+      <view class="flex-item bc_green">
+        <view class='RemarkTital RemarkTextColor'>当前发布</view>
+        <!-- 分割线 -->
+        <view class="divLine"> </view>
+
+        <view class='normalday'>常日班： {{dayInfos[0].count}}人</view>
+
+        <view class='longday'>长时班： {{dayInfos[1].count}}人</view>
+
+        <view class="trackedday">跟踪班： {{dayInfos[2].count}}人 </view>
+
+        <!-- </view> -->
+      </view>
+    </view>
+
+    <!-- 发布需求 -->
+    <view class="release bc_green">
+      <view style="display: flex;justify-content: center;margin: 0 auto;">
+        发布需求
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine">
+      </view>
+      <view class="work">
+
+        <!-- 常日班 -->
+        <view class="releasework" style="flex-item;">
+          <view class="releasetext">
+            常日班：
+          </view>
+          <input class="workinput" style="color:#000" name="normalDayPeople" placeholder="  " />
+          <view class="releasetext" style="padding-left:75rpx">
+            备 注：
+          </view>
+          <input value="工作时间：9:00-17:00" class="workinput" style="color:#000;width: 220rpx;" name="normalDayNote" placeholder="  " />
+        </view>
+
+        <!-- 长时班 -->
+        <view class="releasework" style="flex-item;">
+          <view class="releasetext">
+            长时班：
+          </view>
+          <input class="workinput" style="color:#000" name="longDayPeople" placeholder="  " />
+          <view class="releasetext" style="padding-left:75rpx">
+            备 注：
+          </view>
+          <input value="工作时间：9:00-19:00" class="workinput" style="color:#000;width: 220rpx;" name="longDayNote" placeholder="  " />
+        </view>
+
+        <!-- 跟踪班 -->
+        <view class="releasework" style="flex-item;">
+          <view class="releasetext">
+            跟踪班：
+          </view>
+          <input class="workinput" style="color:#000" name="trackedDayPeople" placeholder="  " />
+          <view class="releasetext" style="padding-left:75rpx">
+            备 注：
+          </view>
+          <input value="工作时间：7:00-18:00" class="workinput" style="color:#000;width: 220rpx;" name="trackedDayPeopleNote" placeholder="  " />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area" style="margin:30rpx">
+    <button class="weui-btn" style="width:200rpx" type="primary" form-type="submit">提交</button>
+  </view>
+</form>

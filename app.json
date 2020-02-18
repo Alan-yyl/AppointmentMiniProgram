@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/requirement/requirement",
+    "pages/arrange/arrangeform",
+    "pages/arrange/arrange",
+    "pages/appointment/appointment",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/edit/edit",
+    "pages/authorize/authorize",
+    "pages/my_appointment/my_appointment",
+    "pages/rank/rank",
+    "pages/work_condition/work_condition",
+    "pages/workday/workday",
+    "components/loading/loading",
+    "components/icon/icon"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ATA工作预约平台",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#f10b2e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath":"images/release.png",
+        "selectedIconPath":"images/release1.png",
+        "pagePath": "pages/requirement/requirement",
+        "text": "发布需求"
+      },
+      {
+        "iconPath": "images/plan.png",
+        "selectedIconPath": "images/plan1.png",
+        "pagePath": "pages/arrange/arrange",
+        "text": "安排工作"
+      },
+      {
+        "iconPath": "images/appointment1.png",
+        "selectedIconPath": "images/appointment.png",
+        "pagePath": "pages/appointment/appointment",
+        "text": "自助预约"
+      },
+      {
+        "iconPath": "images/my1.png",
+        "selectedIconPath": "images/my.png",
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

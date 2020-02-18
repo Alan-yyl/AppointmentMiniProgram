@@ -1,0 +1,12 @@
+<!--wxml-->
+<view class="container">
+  <view class='titleView'>
+    <image class='icon' src='../../images/mycenter/logo.png'></image>
+    <text class='title'>XXXX</text>
+  </view>
+  <view class='contentView'>
+    <text class='tip_title'>登录后XXXX将获得以下权限</text>
+    <text class='tip_content' space="emsp"> · 获得你的公开信息(昵称、头像等)</text>
+    <button class='confirmBtn' open-type='getUserInfo' type='primary' bindgetuserinfo="bindGetUserInfo">确认登录</button>
+  </view>
+</view>

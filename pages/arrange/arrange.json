@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-loading": "../components/loading/loading"
+  },
+  "navigationBarTitleText": "UI组件库"
+}

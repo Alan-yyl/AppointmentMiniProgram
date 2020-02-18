@@ -1,0 +1,86 @@
+<view class="container more">
+  <view class="user flex-wrp">
+    <view class='header'>
+      <open-data class='userInfo' type="userAvatarUrl" bindgetuserinfo="onGotUserInfo"></open-data>
+    </view>
+    <view>
+      <open-data class="nickname" type="userNickName" lang="zh_CN"></open-data>
+    </view>
+    <view class="user-info flex-item">
+      <navigator url="/pages/edit/edit">
+        <text class="edit">查看或编辑个人信息</text>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="my">
+
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/appointment1.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <navigator url="/pages/my_appointment/my_appointment">
+          <text>我的预约</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/rank.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <navigator url="/pages/rank/rank">
+          <text>我的客服等级</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/work_condition.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+       <navigator url="/pages/work_condition/work_condition">
+          <text>我的工作情况</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/work_time.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+      <navigator url="/pages/workday/workday">
+          <text>我的工作时间</text>
+        </navigator>
+        
+      </view>
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/wages.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>工资待遇细则</text>
+      </view>
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/announcement.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>近期公告</text>
+      </view>
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/feedback.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>意见反馈</text>
+      </view>
+    </view>
+  </view>
+</view>

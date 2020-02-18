@@ -1,0 +1,103 @@
+<view class="date">
+  <image class="direction" src="../../../../../images/icon_direction_left.png" bindtap='minusMouth'/>
+    <label>{{year}}年{{mouth}}月</label>
+    <image class="direction" src="../../../../../images/icon_direction_right.png" bindtap='plusMouth' />
+</view>
+<view class="header">
+    <block wx:for="{{weeks}}" wx:key="index">
+        <text class="weeks-item-text">{{item}}</text>
+    </block>
+</view>
+<!-- 日历显示 -->
+<view class="body-days">
+    <block wx:for="{{days}}" wx:key="index">
+        <view class="days-item" >
+        <!-- 设置每一天的样式 -->
+            <view  data-year="{{year}}" data-month="{{mouth}}" data-value="{{item.value}}" 
+            bindtap='getdayinfo' class="{{item.class}}">
+            <!-- 显示每一天 -->
+            {{item.value}}
+            </view>
+            <view wx:if="{{item.workDay==0}}" class="workDay">
+            <!-- 显示工作日 -->
+            <image class="appointment" src="../../../../../images/icon_appointment.png"/>
+            </view>
+            <view wx:elif="{{item.workDay==-1}}" class="workDay">
+            <!-- 显示已过期的 -->
+            <image class="appointment" src="../../../../../images/finished.png"/>
+            </view>
+            <view wx:elif="{{item.workDay==1}}" class="workDay">
+            <!-- 显示未发布的 -->
+            <image class="appointment" src="../../../../../images/start.png"/>
+            </view>
+        </view>
+                      
+    </block>
+</view>
+
+<view class="section">
+  <view class="flex-wrp" style="height: 300px;flex-direction:column;">
+    <block wx:for="{{dayInfos}}" wx:key="index">
+    <view class="flex-item bc_green">
+       <view class='ContentText'   style="flex-direction:row;">
+          <view class='worktype' >{{item.type}}</view>
+          <view  class="note">
+          <!-- 如何打印空格 -->
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+          工作时间:{{item.note}}
+          </view>
+          <view  class='Quota'>剩余名额:{{item.count}}</view>
+          <!-- 今天不是工作日，需求尚未发布 -->
+          <view wx:if="{{item.note=='待发布'}}" class='ContentTextValue'>
+            <button class='btnno'>待发布</button>
+          </view>
+           <!-- 今天不是工作日，工作已过期 -->
+          <view wx:elif="{{item.note=='已过期'}}" class='ContentTextValue'>
+            <button class='btnno' >已过期</button>
+          </view>
+          <!-- 今日剩余名额大于0，且今天没有被预约过 -->
+          <view wx:elif="{{item.count>0&&!selectedToday.status}}"   class='ContentTextValue'>
+          <button  data-type='{{item.type}}' data-date='{{item.date}}' bindtap='book' data-count='{{item.count}}'class="appointmentButton">可预约
+          </button>
+          </view> 
+          <!-- 用户预约了该班次 -->
+          <view wx:elif="{{selectedToday.status&&(item.type==selectedToday.type)}}"   class='ContentTextValue'>
+          <button class="btnno">已预约
+          </button>
+          </view>
+          <!-- 剩余名额小于等于0 -->
+          <view wx:elif="{{item.count<=0}}" class='ContentTextValue'>
+            <button class='btnno' >已约满</button>
+          </view>
+          <!-- 用户已经预约了其他的班次 -->
+          <view wx:else class='ContentTextValue'>
+            <button class='btnno'>已预约</button>
+          </view>
+       </view>
+    </view>
+    </block>
+
+     <view class="RemarkSize bc_green">
+        <view class='RemarkTital RemarkTextColor'>
+          温馨提示
+        </view>
+
+        <view class="RemarkText">
+        <image class="RemarkPhotos" src="../../../../../images/finished.png"/>
+        <text>：工作已过期，无法预约\n</text>
+        </view>
+
+
+        <view class="RemarkText">
+        <image class="RemarkPhotos" src="../../../../../images/icon_appointment.png"/>
+        <text>：当天工作还有空缺，可以点击对应的日期进行预约\n</text>
+        </view>
+
+        <view class="RemarkText">
+        <image class="RemarkPhotos" src="../../../../../images/start.png"/>
+        <text>：工作尚未发布，无法预约</text>
+        </view>
+    </view>
+  </view>
+</view>
+ 

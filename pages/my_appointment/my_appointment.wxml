@@ -1,0 +1,45 @@
+<view class="container">  
+  <view class="my" style="margin-top:5rpx">
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/normal.png"></image>
+      </view>
+      <view class="myitem-name flex-item" bindtap="gotableinfo">
+        <view class="worktype">
+          工作类型：客服
+        </view>
+        <view class="worktime">
+          2019/10/15 9:19:29
+        </view>
+        <view class="workdate">
+          工作日期：2019-10-17(星期四)
+        </view>
+        <view class="appointmentstatus">
+          正常
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="my">
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/normal.png"></image>
+      </view>
+      <view class="myitem-name flex-item" bindtap="gotableinfo">
+        <view class="worktype">
+          工作类型：客服
+        </view>
+        <view class="worktime">
+          2019/10/15 9:19:29
+        </view>
+        <view class="workdate">
+          工作日期：2019-10-17(星期四)
+        </view>
+        <view class="appointmentstatus">
+          正常
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

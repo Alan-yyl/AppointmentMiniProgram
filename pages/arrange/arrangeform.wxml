@@ -1,0 +1,30 @@
+<!-- <view>Hello World!</view> -->
+<view class="form">
+  <!-- 一个输入、判断框 -->
+  <view class="item" wx:for="{{inputArray}}" wx:key="index">
+    <!-- 当输入框数组长度大于1时，显示减少按钮 -->
+    <view wx:if="{{inputArray.length>1}}" class="minusbutton">
+      <button bindtap="minus" data-index="{{index}}">
+        <mp-icon  icon="close2" color="#f4ea2a" size="{{25}}"></mp-icon>
+      </button>
+    </view>
+    <input data-index="{{index}}" value="{{item.name}}" class="inputitem" placeholder="姓名" bindconfirm="eventhandle">
+    </input>
+    <!-- 正在加载中
+    <view wx:if="{{item.status==-1}}" class="weui-loading" ></view> -->
+    <!-- 服务器中没有该名字 -->
+    <icon wx:if="{{item.status==0}}" type="warn" size="20" color="red" style="margin-top:7rpx;"></icon>
+    <!-- 服务器中有该名字 -->
+    <icon wx:if="{{item.status==1}}" type="success" size="20" color="green" style="margin-top:7rpx;"></icon>
+  </view>
+  <!-- 显示增加按钮 -->
+  <view class="addbutton">
+    <button bindtap="add">
+      <mp-icon  icon="add2" color="#f4ea2a" size="{{25}}"></mp-icon>
+    </button>
+  </view>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" style="width:200rpx;" type="primary" bindtap="submit">保存</button>
+</view>
+

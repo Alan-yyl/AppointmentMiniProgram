@@ -1,0 +1,184 @@
+.date {
+    background-color: #ececec;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    line-height: 3em;
+    align-items: center;
+}
+
+.direction {
+    width: 40rpx;
+    margin: 10rpx;
+    height: 40rpx;
+}
+.appointment{
+    width: 20rpx;
+    margin: 5rpx;
+    height: 20rpx;
+    align-content: left
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx solid #ececec;
+}
+
+.weeks-item-text {
+    width: 200%;
+    line-height: 2em;
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.body-days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.days-item {
+    width: 14.285%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    /* 父元素位置要设置为相对 */
+    position: relative; 
+}
+
+.workDay{
+  /* 要约束所在位置的子元素的位置要设置成绝对 */
+  position: absolute;
+  /* 调节靠右 */
+  right: 0;
+  align-content: right;
+}
+
+.days-item-text {
+    width: 30rpx;
+    padding: 16rpx;
+    font-size: 30rpx;
+    border-radius: 50%;
+    border: 0rpx solid #ececec;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    color: #000;
+}
+.days-item-text-select {
+    width: 38rpx;
+    padding: 16rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 0rpx solid lightblue;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    background-color: gray;
+}
+.workDay-item-text-select {
+    width: 38rpx;
+    padding: 16rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 0rpx solid lightblue;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    background-color: red;
+}
+.section{
+   margin-top: 10rpx;
+   background-color: #ececec;
+}
+.flex-wrp{
+  margin-top:100rpx;
+  /* padding: 10rpx; */
+  background-color: #ececec;
+}
+.flex-item{
+  border-radius: 10rpx;
+  margin: 10rpx;
+  height: 80px;
+  align-items:center;
+  display: flex;
+  position: relative;
+}
+.bc_green{
+  background-color: white;
+  }
+.ContentText{
+  padding: 5rpx;
+  width: 100%;
+  display: flex;
+}
+
+.ContentTextValue{
+  display: flex;
+  align-items:center;
+  right: 0rpx;
+}
+.Quota{
+  display: flex;
+  /* margin-left: 91rpx; */
+  width: 200rpx;
+  justify-content:center;
+  left: 267rpx;
+  bottom: 55rpx;
+  /* align-items: center; */
+  position: absolute;
+}
+.ContentText button{
+  float: right;
+  color:white;
+  background:#07C160;
+  margin: auto; 
+}
+.ContentText .btnno{
+    background:lightgray;
+    position: absolute;
+  /* 调节靠右 */
+  right: 25rpx;
+}
+.RemarkTital{
+  display: flex;
+  /* padding-left: 268rpx; */
+  justify-content: center;
+  padding-top:20rpx; 
+}
+.RemarkText{
+  font-size: 20rpx;
+  display: flex;
+  /* justify-content: center; */
+  padding-left: 24rpx;
+}
+.RemarkPhotos{
+  width: 30rpx;
+  height: 30rpx;
+}
+.RemarkSize{
+  border-radius: 10rpx;
+  margin: 10rpx;
+  height: 100px;
+}
+.appointmentButton{
+  position: absolute;
+  /* 调节靠右 */
+  right: 25rpx;
+}
+.worktype{
+  /* height: 20rpx; */
+  left: 25rpx;
+  width: 100rpx;
+  bottom: 55rpx;
+  /* align-items: center; */
+  position: absolute;
+}
+.period{
+  width: 250rpx;
+  font-size: 20rpx;
+  position: absolute;
+  bottom: 10rpx;
+  }
+

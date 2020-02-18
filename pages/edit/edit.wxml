@@ -1,0 +1,71 @@
+<form bindsubmit="formSubmit">
+<view class="container more">
+  <view class="my">
+    <view class="my-item flex-wrp">
+      <view class="myitem-text flex-item">
+        姓名
+      </view>
+      <input class="myitem-name flex-item" name="name" placeholder="请输入姓名" />
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-text flex-item">
+        联系电话
+      </view>
+      <input class="myitem-name flex-item" style="color:#000" name="telnumber" placeholder="请输入联系电话" />
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-text flex-item">
+        身份证号
+      </view>
+      <input class="myitem-name flex-item" name="IDCard" placeholder="请输入身份证号" />
+    </view>
+    <view class="my-item flex-wrp">
+      <view class="myitem-text flex-item">
+        银行账号
+      </view>
+      <input class="myitem-name flex-item" name="IDCard" placeholder="请输入银行账号" />
+    </view>
+
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view style="font-size: 34rpx;color: #6d6d6d;padding: 37.5rpx 0;">身份证正反面照片</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files">
+                <block wx:for="{{imageList}}" wx:for-item="image">
+                  <view class="weui-uploader__file">
+                    <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" form-type="submit">确定</button>
+     </view>   
+</view>
+<view class="RemarkSize bc_green">
+        <view class='RemarkTital RemarkTextColor'>
+          重要提示
+        </view>
+
+        <view class="RemarkText">
+        <text>姓名、联系电话、身份证号未填写无法预约工作\n\n</text>
+        </view>
+
+
+        <view class="RemarkText">
+        <text>银行账号开户行必须为中国工商银行\n\n</text>
+        </view>
+    </view>
+</form>
